@@ -1,0 +1,13 @@
+diff --git a/pkg/minimal/limits.go b/pkg/minimal/limits.go
+index 95da4f27a..e13100d40 100644
+--- a/pkg/minimal/limits.go
++++ b/pkg/minimal/limits.go
+@@ -18,7 +18,7 @@ func Memory(typ machine.Type) (minimum, recommended uint64, err error) {
+ 	// We remove 100 MiB from the recommended memory to account for the kernel
+ 	switch typ { //nolint:exhaustive
+ 	case machine.TypeControlPlane, machine.TypeInit:
+-		minimum = 2*humanize.GiByte - 150*humanize.MiByte
++		minimum = 1*humanize.GiByte - 150*humanize.MiByte
+ 		recommended = 4*humanize.GiByte - 150*humanize.MiByte
+ 
+ 	case machine.TypeWorker:
